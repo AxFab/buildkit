@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# =======================================================
+# GitHook '.git/hooks/pre-commit'
+#     Fabien B. <fabien.bavent@gmail.com>
+#
+# This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# =======================================================
+
+# -------------------------------------------------------
+# Get previous commit for diffs
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+  against=HEAD
+else
+  # Initial commit: diff against an empty tree object
+  against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+fi
+
+# Redirect output to stderr.
+exec 1>&2
+
+# Read git config
+allow___=`git config --bool hooks.allow___`
+
+# -------------------------------------------------------
+# Correct EOL for what's about to be check-in
+for fl in `git diff-index --cached HEAD --name-only`; do
+  if [ ! -z "`git diff $fl`" ]; then
+    echo 'GitHook] The file '$fl' is modified, please check'
+    echo 'GitHook]     git status'
+    echo 'GitHook] Commit aborted...'
+    exit 1
+  fi
+
+  if [ -z "`find $fl | grep text`" ]; then
+    sed 's/[ \t\r]*$//' -i $fl
+    if [ ! -z "`git diff $fl`" ]; then
+      git add $fl
+      echo 'GitHook] Fixing white-space on '$fl' before commit'
+    fi
+  fi
+done
+
+# -------------------------------------------------------
+# exit 1 # Abort the commit by leaving with !0
+
