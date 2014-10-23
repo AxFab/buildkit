@@ -14,11 +14,11 @@
 
   __INCOMPLETE__
 
-  This makefile require the binaries: ```binutils pkg-config check valgrind 
-  gcov cppcheck rats and sonar-runner```.  Alls are however not mandatory to 
+  This makefile require the binaries: ```binutils pkg-config check valgrind
+  gcov cppcheck rats and sonar-runner```.  Alls are however not mandatory to
   compile binaries.
 
-  This makefile doesn't allow to specify different flags for two deliveries of 
+  This makefile doesn't allow to specify different flags for two deliveries of
   the same mode.
 
   All the rules can be launch from the same script, this is not a recursive
@@ -34,7 +34,7 @@
 > Build HTML coverage report
 > Generate XML reports form valgrind
 > Generate XML reports form gcov
-> Generate XML reports form cppcheck 
+> Generate XML reports form cppcheck
 > Generate XML reports form rats
 > Build the package name-build-v0.0.tar.gz with release binaries
 > Build the package name-devel-v0.0.tar.gz with debug binary and headers
@@ -44,10 +44,10 @@
 
 ### Copyright
 
-  All this scripts are from my own making, even if I get my inspiration from 
+  All this scripts are from my own making, even if I get my inspiration from
   various source on internet or somewhere else.
   There is no copyright on this repository. Feel free to copy, modify and share
-  this work. Quote your source is appreciate, but not mandatory as you will 
+  this work. Quote your source is appreciate, but not mandatory as you will
   probably just take small part of this repository.
 
 >  This program is distributed in the hope that it will be useful,
