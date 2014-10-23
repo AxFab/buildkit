@@ -27,19 +27,19 @@
 
 >  __```make everything```__
 >
-> Generate all debug binaries
-> Generate all release binaries
-> Generate all test binaries
-> Launch all unit-tests
-> Build HTML coverage report
-> Generate XML reports form valgrind
-> Generate XML reports form gcov
-> Generate XML reports form cppcheck
-> Generate XML reports form rats
-> Build the package name-build-v0.0.tar.gz with release binaries
-> Build the package name-devel-v0.0.tar.gz with debug binary and headers
-> Build the package name-reports-v0.0.tar.gz with all quality report
-> Will run sonar check script
+> - Generate all debug binaries
+> - Generate all release binaries
+> - Generate all test binaries
+> - Launch all unit-tests
+> - Build HTML coverage report
+> - Generate XML reports form valgrind
+> - Generate XML reports form gcov
+> - Generate XML reports form cppcheck
+> - Generate XML reports form rats
+> - Build the package name-build-v0.0.tar.gz with release binaries
+> - Build the package name-devel-v0.0.tar.gz with debug binary and headers
+> - Build the package name-reports-v0.0.tar.gz with all quality report
+> - Will run sonar check script
 
 
 ### Copyright
